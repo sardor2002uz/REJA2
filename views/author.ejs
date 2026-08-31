@@ -1,84 +1,601 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/main.css">
-        <link 
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" 
-        rel="stylesheet"/>
-        <script  src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        <title>Portfolio</title>
-    </head>
-       
-    
-    <body>
-        <div class="frame">
-          <div class="main_frame">
-            <div class="left_frame">
-                <div class="left_1">
-                    <div class="left_1-1">
-                        <img src="images/profile.png" width="156px" height="142px" alt="">
-                    </div>
-                    
-                    
-                    <div class="left_1-2"><%-user.name%></div>
-                    <div class="left_1-3"><%-user.profession%></div>
-                    <div class="left-icons">
-                        <a class="link_href" href="">
-                            <div class="icon">
-                              <img src="icon/Vector.svg" class="icon-1" />  
-                            </div>
-                        </a>
-                        <a class="link_href" href="">
-                            <div class="icon">
-                                <img src="icon/Vector-1.svg" class="icon-1" />
-                            </div>
-                        </a>
-                        <a class="link_href" href="">
-                            <div class="icon">
-                                <img src="icon/Vector-2.svg" class="icon-1" />
-                            </div>
-                        </a>
-                        <a class="link_href" href="">
-                            <div class="icon">
-                                <img src="icon/Vector-3.svg" class="icon-1" />
-                            </div>
-                        </a>
-                        <a class="link_href" href="">
-                            <div class="icon">
-                                <img src="icon/Vector-4.svg" class="icon-1" />
-                            </div>
-                        </a>
-                        <a class="link_href" href="">
-                            <div class="icon">
-                                <img src="icon/Vector-5.svg" class="icon-1" />
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="marginer"><%-user.age%></div>
-                <div class="left_2"></div>
-                    
-                    
-                </div>
-                <div class="marginer"></div>
-                <div class="left_3"></div>
-                <div class="marginer"></div>
-                <div class="left_4"></div>
-                <div class="marginer"></div>
-                <div class="left_5"></div>
-                <div class="marginer"></div>
-                
-                
-                
-            </div>
-            <div class="midd_frame"></div>
-            <div class="right_frame"></div>
-          </div>   
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/author/main.css">
+
+  <title><%= user.name %> - Portfolio</title>
+</head>
+
+<body class="portfolio-frame">
+
+  <div class="container">
+
+    <!-- ========================================
+         LEFT SECTION
+    ========================================= -->
+
+    <div class="left-section">
+
+      <!-- PROFILE -->
+      <div class="profile">
+
+        <img
+          class="image"
+          src="/author/images/profile.png"
+          alt="profile"
+        />
+
+        <div class="name">
+          <%= user.name %>
         </div>
 
-    </body>
-    </html>
-    
+        <div class="description">
+          <%= user.profession %>
+        </div>
+
+
+        <!-- SOCIAL ICONS -->
+        <div class="social-icons">
+
+          <div class="box">
+            <img
+              class="icon"
+              src="/author/icon/facebook.svg"
+              alt="facebook"
+            />
+          </div>
+
+          <div class="box">
+            <img
+              class="icon"
+              src="/author/icon/instagram.svg"
+              alt="instagram"
+            />
+          </div>
+
+          <div class="box">
+            <img
+              class="icon"
+              src="/author/icon/Linkeding.svg"
+              alt="linkedin"
+            />
+          </div>
+
+          <div class="box">
+            <img
+              class="icon"
+              src="/author/icon/twitter.svg"
+              alt="twitter"
+            />
+          </div>
+
+          <div class="box">
+            <img
+              class="icon"
+              src="/author/icon/youtube.svg"
+              alt="youtube"
+            />
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ========================================
+           DETAILS
+      ========================================= -->
+
+      <div class="detail">
+
+        <div class="info">
+          <span>Age:</span>
+          <span><%= user.age %></span>
+        </div>
+
+        <div class="info">
+          <span>Residence:</span>
+          <span><%= user.residence %></span>
+        </div>
+
+        <div class="info">
+          <span>Freelance:</span>
+          <span class="available">
+            Available
+          </span>
+        </div>
+
+        <div class="info">
+          <span>Address:</span>
+          <span><%= user.address %></span>
+        </div>
+
+      </div>
+
+
+      <div class="marginer"></div>
+
+
+      <!-- ========================================
+           LANGUAGES
+      ========================================= -->
+
+      <div class="languages">
+
+        <h4>Languages</h4>
+
+        <% if (user.languages && user.languages.length > 0) { %>
+
+          <% user.languages.forEach((language, index) => { %>
+
+            <div class="language">
+
+              <span>
+                <%= language %>
+              </span>
+
+              <span>
+                <% if (index === 0) { %>
+                  90%
+                <% } else if (index === 1) { %>
+                  70%
+                <% } else { %>
+                  100%
+                <% } %>
+              </span>
+
+            </div>
+
+
+            <% if (index === 0) { %>
+
+              <div class="liner90 liners"></div>
+
+            <% } else if (index === 1) { %>
+
+              <div class="liner70 liners"></div>
+
+            <% } else { %>
+
+              <div class="liner100 liners"></div>
+
+            <% } %>
+
+          <% }) %>
+
+        <% } %>
+
+      </div>
+
+
+      <div class="marginer"></div>
+
+
+      <!-- ========================================
+           SKILLS
+      ========================================= -->
+
+      <div class="skills">
+
+        <h4>Skills</h4>
+
+        <% if (user.skills && user.skills.length > 0) { %>
+
+          <% user.skills.forEach((skill, index) => { %>
+
+            <div class="skill">
+
+              <span>
+                <%= skill %>
+              </span>
+
+              <span>
+                <% if (index === 0) { %>
+                  100%
+                <% } else if (index === 1) { %>
+                  80%
+                <% } else if (index === 2) { %>
+                  90%
+                <% } else { %>
+                  85%
+                <% } %>
+              </span>
+
+            </div>
+
+
+            <% if (index === 0) { %>
+
+              <div class="liner100 liners"></div>
+
+            <% } else if (index === 1) { %>
+
+              <div class="liner80 liners"></div>
+
+            <% } else if (index === 2) { %>
+
+              <div class="liner90 liners"></div>
+
+            <% } else { %>
+
+              <div class="liner85 liners"></div>
+
+            <% } %>
+
+          <% }) %>
+
+        <% } %>
+
+      </div>
+
+
+      <div class="marginer"></div>
+
+
+      <!-- ========================================
+           EXTRA SKILLS
+      ========================================= -->
+
+      <div class="extra-skills">
+
+        <h4>Extra Skills</h4>
+
+        <% if (user.extra_skills && user.extra_skills.length > 0) { %>
+
+          <% user.extra_skills.forEach((skill) => { %>
+
+            <div class="skill-box">
+
+              <img
+                class="skill-icon"
+                src="/author/icon/menu-square.svg"
+                alt="skill-icon"
+              />
+
+              <span>
+                <%= skill %>
+              </span>
+
+            </div>
+
+          <% }) %>
+
+        <% } %>
+
+      </div>
+
+    </div>
+
+
+    <!-- ========================================
+         MIDDLE SECTION
+    ========================================= -->
+
+    <div class="middle-section">
+
+
+      <!-- ========================================
+           HIGHLIGHT
+      ========================================= -->
+
+      <div class="highlight">
+
+        <div class="information">
+
+          <!-- Decorative images -->
+          <img
+            class="ellipse1"
+            src="/author/images/Rectangle 53.svg"
+            alt=""
+          />
+
+          <img
+            class="ellipse2"
+            src="/author/images/Ellipse 16.svg"
+            alt=""
+          />
+
+          <img
+            class="ellipse3"
+            src="/author/images/Ellipse 18.svg"
+            alt=""
+          />
+
+          <img
+            class="ellipse4"
+            src="/author/images/Ellipse 16.svg"
+            alt=""
+          />
+
+          <img
+            class="ellipse5"
+            src="/author/images/Screenshot 2025-07-29 at 09.12.43 2.svg"
+            alt=""
+          />
+
+
+          <h1 class="main-info">
+            <%= user.profession %>
+            In
+            <%= user.work_place %>
+          </h1>
+
+
+          <h6 class="main-description">
+            <%= user.about_me %>
+          </h6>
+
+
+          <button class="button">
+            Hire me
+          </button>
+
+        </div>
+
+
+        <!-- MAIN IMAGE -->
+        <div class="main-image">
+
+          <img
+            src="/author/icon/person.svg"
+            alt="main-image"
+          />
+
+        </div>
+
+      </div>
+
+
+      <!-- ========================================
+           SERVICES
+      ========================================= -->
+
+      <div class="services">
+
+        <div class="services-info">
+
+          <h2>
+            My Services
+          </h2>
+
+          <p class="service-desc">
+            <%= user.service_desc %>
+          </p>
+
+        </div>
+
+
+        <!-- SERVICE CARDS -->
+
+        <div class="cards">
+
+
+          <!-- WEB DEVELOPMENT -->
+
+          <div class="card">
+
+            <img
+              class="card-img"
+              src="/author/icon/field-web.svg"
+              alt="web-img"
+            />
+
+            <h4 class="card-name">
+              Web Development
+            </h4>
+
+            <p class="card-description">
+              Blog, E-commerce
+            </p>
+
+          </div>
+
+
+          <!-- UI/UX DESIGN -->
+
+          <div class="card">
+
+            <img
+              class="card-img"
+              src="/author/icon/field-design.svg"
+              alt="design-img"
+            />
+
+            <h4 class="card-name">
+              UI/UX Design
+            </h4>
+
+            <p class="card-description">
+              Mobile App, Website Design
+            </p>
+
+          </div>
+
+
+          <!-- SOUND DESIGN -->
+
+          <div class="card">
+
+            <img
+              class="card-img"
+              src="/author/icon/field-sound.svg"
+              alt="sound-img"
+            />
+
+            <h4 class="card-name">
+              Sound Design
+            </h4>
+
+            <p class="card-description">
+              Voice Over, Beat Making
+            </p>
+
+          </div>
+
+
+          <!-- MOBILE APP -->
+
+          <div class="card">
+
+            <img
+              class="card-img"
+              src="/author/icon/field-game.svg"
+              alt="game-img"
+            />
+
+            <h4 class="card-name">
+              Mobile App Design
+            </h4>
+
+            <p class="card-description">
+              Character Design, Props & Objects
+            </p>
+
+          </div>
+
+
+          <!-- PHOTOGRAPHY -->
+
+          <div class="card">
+
+            <img
+              class="card-img"
+              src="/author/icon/field-photo.svg"
+              alt="photo-img"
+            />
+
+            <h4 class="card-name">
+              Photography
+            </h4>
+
+            <p class="card-description">
+              Portrait, Product Photography
+            </p>
+
+          </div>
+
+
+          <!-- ADVERTISING -->
+
+          <div class="card">
+
+            <h4 class="card-name">
+              Advertising
+            </h4>
+
+            <p class="card-description">
+              Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Temporibus eveniet
+              corporis quia nobis, officia, iure,
+              distinctio eos ut minus accusantium eum.
+            </p>
+
+            <a
+              class="card-link"
+              href="#"
+            >
+              Order now
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ========================================
+         RIGHT SECTION
+    ========================================= -->
+
+    <div class="right-section">
+
+
+      <!-- DARK MODE -->
+
+      <div class="dark-mode">
+
+        <img
+          src="/author/icon/menu-dark.svg"
+          alt="dark-mode"
+        />
+
+      </div>
+
+
+      <!-- MENUS -->
+
+      <div class="menus">
+
+        <div class="menu">
+
+          <a href="/">
+            <img
+              class="menu-icon"
+              src="/author/icon/menu-home.svg"
+              alt="home-icon"
+            />
+          </a>
+
+        </div>
+
+
+        <div class="menu">
+
+          <img
+            class="menu-icon"
+            src="/author/icon/menu-code.svg"
+            alt="code-icon"
+          />
+
+        </div>
+
+
+        <div class="menu">
+
+          <img
+            class="menu-icon"
+            src="/author/icon/menu-degree.svg"
+            alt="degree-icon"
+          />
+
+        </div>
+
+
+        <div class="menu">
+
+          <img
+            class="menu-icon"
+            src="/author/icon/menu-work.svg"
+            alt="work-icon"
+          />
+
+        </div>
+
+
+        <div class="menu">
+
+          <img
+            class="menu-icon"
+            src="/author/icon/menu-chat.svg"
+            alt="chat-icon"
+          />
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

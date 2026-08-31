@@ -1,0 +1,775 @@
+/* ========================================
+   GLOBAL
+======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f5f5f5;
+}
+
+.portfolio-frame {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* ========================================
+   MAIN CONTAINER
+======================================== */
+
+.portfolio-frame .container {
+  width: 1320px;
+  min-width: 1320px;
+  height: 1315px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  background: #ffffff;
+}
+
+/* ========================================
+   LEFT SECTION
+======================================== */
+
+.container .left-section {
+  position: relative;
+
+  width: 245px;
+  height: 1315px;
+
+  background: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* PROFILE */
+
+.left-section .profile {
+  position: relative;
+
+  width: 245px;
+  height: 274px;
+
+  margin-top: 30px;
+  margin-bottom: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: Inter, Arial, sans-serif;
+}
+
+/* PROFILE IMAGE */
+
+.left-section .profile .image {
+  position: relative;
+
+  width: 177px;
+  height: 160px;
+
+  margin-bottom: 5px;
+
+  max-width: 100%;
+
+  border-radius: 87px;
+
+  object-fit: cover;
+}
+
+.left-section .profile .image:hover {
+  transform: scale(1.05);
+}
+
+/* NAME */
+
+.left-section .profile .name {
+  position: relative;
+
+  display: flex;
+
+  margin-bottom: 5px;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #2b2b2b;
+}
+
+/* PROFESSION */
+
+.left-section .profile .description {
+  position: relative;
+
+  display: flex;
+
+  margin-bottom: 21px;
+
+  color: #767676;
+
+  line-height: 24px;
+  font-size: 15px;
+}
+
+/* ========================================
+   SOCIAL ICONS
+======================================== */
+
+.left-section .profile .social-icons {
+  position: relative;
+
+  width: 245px;
+  height: 40px;
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-around;
+  align-items: center;
+}
+
+.left-section .social-icons .box {
+  position: relative;
+
+  width: 41px;
+  height: 39px;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #ffb400;
+
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
+
+  cursor: pointer;
+}
+
+.left-section .social-icons .box:hover {
+  transform: scale(1.1);
+
+  background: #ffa500;
+}
+
+.left-section .social-icons .icon {
+  position: relative;
+
+  width: 24px;
+  height: 23px;
+}
+
+/* ========================================
+   DETAILS
+======================================== */
+
+.left-section .detail {
+  position: relative;
+
+  width: 221px;
+  height: 127px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.left-section .detail .info {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+
+  font-size: 15px;
+  color: #2b2b2b;
+}
+
+.left-section .info .available {
+  color: #12b100;
+}
+
+/* ========================================
+   MARGINER
+======================================== */
+
+.left-section .marginer {
+  position: relative;
+
+  width: 221px;
+
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+  border-top: 1.5px solid #f0f0f6;
+}
+
+/* ========================================
+   HEADINGS
+======================================== */
+
+.left-section h4 {
+  position: relative;
+
+  font-size: 18px;
+  font-weight: 800;
+
+  color: #2b2b2b;
+}
+
+/* ========================================
+   LANGUAGES
+======================================== */
+
+.left-section .languages {
+  position: relative;
+
+  width: 221px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.left-section .languages .language {
+  position: relative;
+
+  font-size: 15px;
+  color: #767676;
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+}
+
+/* ========================================
+   SKILL BARS
+======================================== */
+
+.left-section .liners {
+  position: relative;
+
+  width: 221px;
+  height: 4px;
+
+  border: 0.5px solid #ffb400;
+
+  border-radius: 30px;
+
+  overflow: hidden;
+}
+
+.left-section .liner100 {
+  background: #ffb400;
+}
+
+.left-section .liner90 {
+  background: linear-gradient(to right, #ffb400 90%, #ffffff 90%);
+}
+
+.left-section .liner85 {
+  background: linear-gradient(to right, #ffb400 85%, #ffffff 85%);
+}
+
+.left-section .liner80 {
+  background: linear-gradient(to right, #ffb400 80%, #ffffff 80%);
+}
+
+.left-section .liner70 {
+  background: linear-gradient(to right, #ffb400 70%, #ffffff 70%);
+}
+
+/* ========================================
+   SKILLS
+======================================== */
+
+.left-section .skills {
+  position: relative;
+
+  width: 221px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.left-section .skills .skill {
+  position: relative;
+
+  font-size: 15px;
+  color: #767676;
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+}
+
+/* ========================================
+   EXTRA SKILLS
+======================================== */
+
+.left-section .extra-skills {
+  position: relative;
+
+  width: 221px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.left-section .skill-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  color: #767676;
+
+  font-size: 15px;
+}
+
+.left-section .skill-box:hover {
+  transform: translateX(5px);
+}
+
+.left-section .skill-box .skill-icon {
+  width: 16px;
+  height: 16px;
+
+  margin-right: 15px;
+}
+
+/* ========================================
+   MIDDLE SECTION
+======================================== */
+
+.container .middle-section {
+  position: relative;
+
+  width: 974px;
+  height: 1315px;
+
+  background: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================
+   HIGHLIGHT
+======================================== */
+
+.middle-section .highlight {
+  position: relative;
+
+  width: 974px;
+  height: 448px;
+
+  margin-bottom: 159px;
+
+  padding-right: 51px;
+  padding-left: 51px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.middle-section .highlight .information {
+  position: relative;
+
+  width: 60%;
+
+  padding-right: 51px;
+  padding-bottom: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+/* ========================================
+   FLOATING ELLIPSES
+======================================== */
+
+.middle-section .information .ellipse1 {
+  position: absolute;
+
+  left: 200px;
+}
+
+.middle-section .information .ellipse2 {
+  position: absolute;
+
+  left: 400px;
+  bottom: 50px;
+}
+
+.middle-section .information .ellipse3 {
+  position: absolute;
+
+  right: 50px;
+  top: 100px;
+}
+
+.middle-section .information .ellipse4 {
+  position: absolute;
+
+  top: 10px;
+}
+
+.middle-section .information .ellipse5 {
+  position: absolute;
+
+  top: 100px;
+  left: 100px;
+}
+
+/* ========================================
+   MAIN TEXT
+======================================== */
+
+.middle-section .information .main-info {
+  position: relative;
+  z-index: 2;
+
+  font-size: 48px;
+  font-weight: 700;
+
+  line-height: 1.15;
+
+  margin-bottom: 34px;
+
+  color: #2b2b2b;
+}
+
+.middle-section .information .main-info:hover {
+  color: #ffb400;
+}
+
+.middle-section .information .main-description {
+  position: relative;
+  z-index: 2;
+
+  color: #767676;
+
+  letter-spacing: 1px;
+  line-height: 24px;
+
+  margin-bottom: 50px;
+
+  font-size: 15px;
+}
+
+/* ========================================
+   HIRE BUTTON
+======================================== */
+
+.middle-section .information .button {
+  position: relative;
+  z-index: 3;
+
+  width: 130px;
+  height: 50px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #ffb400;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.middle-section .information .button:hover {
+  background: #ff9500;
+
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   MAIN IMAGE
+======================================== */
+
+.middle-section .main-image {
+  position: relative;
+
+  width: 40%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.middle-section .main-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========================================
+   SERVICES
+======================================== */
+
+.middle-section .services {
+  position: relative;
+
+  width: 974px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+/* SERVICES INFO */
+
+.middle-section .services .services-info {
+  width: 440px;
+
+  margin-bottom: 50px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+  align-items: center;
+
+  text-align: center;
+}
+
+.middle-section .services-info h2 {
+  margin-bottom: 25px;
+
+  font-size: 32px;
+  font-weight: 700;
+
+  color: #2b2b2b;
+}
+
+.middle-section .services-info .service-desc {
+  line-height: 24px;
+
+  font-size: 15px;
+
+  color: #767676;
+
+  text-align: center;
+}
+
+/* ========================================
+   SERVICE CARDS
+======================================== */
+
+.middle-section .services .cards {
+  display: grid;
+
+  grid-template-columns: repeat(3, 310px);
+
+  gap: 20px;
+}
+
+.middle-section .cards .card {
+  width: 310px;
+  height: 225px;
+
+  padding: 20px;
+
+  border: none;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  border-radius: 5px;
+}
+
+.middle-section .cards .card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* CARD IMAGE */
+
+.middle-section .card .card-img {
+  width: 68px;
+  height: 68px;
+
+  object-fit: contain;
+}
+
+/* .middle-section .card .card-img:hover {
+  transform: rotate(10deg) scale(1.1);
+} */
+
+/* CARD TITLE */
+
+.middle-section .card .card-name {
+  font-size: 18px;
+  font-weight: 500;
+
+  margin-top: 25px;
+
+  color: #2b2b2b;
+
+  text-align: center;
+}
+
+/* CARD DESCRIPTION */
+
+.middle-section .card .card-description {
+  font-size: 15px;
+
+  line-height: 24px;
+
+  color: #767676;
+
+  margin-top: 10px;
+
+  text-align: center;
+}
+
+/* CARD LINK */
+
+.middle-section .card .card-link {
+  margin-top: 10px;
+
+  text-decoration: none;
+
+  color: #ffb400;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+}
+
+.middle-section .card .card-link:hover {
+  color: #ff9500;
+}
+
+/* ========================================
+   RIGHT SECTION
+======================================== */
+
+.container .right-section {
+  position: relative;
+
+  width: 65px;
+  height: 100%;
+
+  border-radius: 30px;
+
+  background: white;
+  border: 1px solid rgb(143, 143, 143);
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+/* ========================================
+   DARK MODE
+======================================== */
+
+.right-section .dark-mode {
+  position: relative;
+
+  width: 30px;
+  height: 30px;
+
+  margin-top: 52px;
+  margin-bottom: 187px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.right-section .dark-mode img {
+  width: 25px;
+  height: 25px;
+}
+
+/* ========================================
+   RIGHT MENUS
+======================================== */
+
+.right-section .menus {
+  position: relative;
+
+  width: 63px;
+  height: 498px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right-section .menus .menu {
+  width: 49px;
+  height: 50px;
+
+  border-radius: 50%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  background: #ffffff;
+
+  cursor: pointer;
+}
+
+.right-section .menus .menu:hover {
+  background: #ffb400;
+
+  transform: scale(1.1);
+}
+
+.right-section .menus .menu-icon {
+  width: 22px;
+  height: 23px;
+}
+
+.right-section .menus .menu:hover img {
+  filter: invert(1);
+}

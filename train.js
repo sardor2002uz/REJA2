@@ -85,21 +85,21 @@
 
 
 
-      function countLetter(letter, word) {
-    let count = 0;
+//       function countLetter(letter, word) {
+//     let count = 0;
 
-    for (let i = 0; i < word.length; i++) {
-        if (word[i] === letter) {
-            count++;
-        }
-    }
+//     for (let i = 0; i < word.length; i++) {
+//         if (word[i] === letter) {
+//             count++;
+//         }
+//     }
 
-    return count;
-}
+//     return count;
+// }
 
-countLetter("e", "engineer")
+// countLetter("e", "engineer")
 
-console.log(countLetter("e", "engineer"));
+// console.log(countLetter("e", "engineer"));
 
 
 
