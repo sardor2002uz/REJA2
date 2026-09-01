@@ -773,3 +773,723 @@ body {
 .right-section .menus .menu:hover img {
   filter: invert(1);
 }
+/* REJA css */
+
+
+
+/* =========================================================
+   REJA — PREMIUM PERSONAL PLANNER
+   ========================================================= */
+
+
+/* ---------- GOOGLE FONT ---------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap");
+
+
+/* ---------- ROOT ---------- */
+
+:root {
+  --primary: #6c63ff;
+  --primary-dark: #5148d8;
+
+  --text: #171725;
+  --text-light: #707084;
+
+  --white: #ffffff;
+
+  --glass: rgba(255, 255, 255, 0.88);
+  --border: rgba(255, 255, 255, 0.55);
+
+  --shadow:
+    0 25px 70px rgba(20, 20, 50, 0.16);
+
+  --radius: 24px;
+}
+
+
+/* ---------- RESET ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+}
+
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.reja-page {
+  min-height: 100vh;
+
+  background-image:
+    linear-gradient(
+      rgba(20, 20, 45, 0.35),
+      rgba(20, 20, 45, 0.35)
+    ),
+
+    url("https://i.pinimg.com/1200x/e4/78/64/e47864f0fd9901d3ec6796fd4beadf69.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  position: relative;
+}
+
+
+/* ---------- DARK OVERLAY ---------- */
+
+.reja-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(108, 99, 255, 0.20),
+      transparent 35%
+    ),
+
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(255, 255, 255, 0.12),
+      transparent 35%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.reja-container {
+  width: 100%;
+  max-width: 900px;
+
+  margin: auto;
+
+  padding: 70px 25px 50px;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.reja-header {
+  text-align: center;
+
+  color: white;
+
+  margin-bottom: 45px;
+}
+
+
+.header-badge {
+  display: inline-block;
+
+  padding: 8px 15px;
+
+  margin-bottom: 18px;
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.14);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  backdrop-filter: blur(12px);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+.reja-header h1 {
+  margin: 0;
+
+  font-size: clamp(38px, 7vw, 68px);
+
+  font-weight: 800;
+
+  letter-spacing: -3px;
+
+  line-height: 1.05;
+}
+
+
+.reja-header h1 span {
+  font-family: "Playfair Display", serif;
+
+  font-weight: 600;
+
+  font-style: italic;
+}
+
+
+.reja-header p {
+  max-width: 500px;
+
+  margin: 18px auto 0;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.78);
+}
+
+
+/* =========================================================
+   CREATE CARD
+   ========================================================= */
+
+.create-card {
+  padding: 30px;
+
+  background: var(--glass);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+
+  backdrop-filter: blur(20px);
+
+  margin-bottom: 35px;
+}
+
+
+.card-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 22px;
+}
+
+
+.title-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: var(--primary);
+
+  color: white;
+
+  font-size: 20px;
+
+  box-shadow: 0 10px 25px rgba(108, 99, 255, 0.35);
+}
+
+
+.card-title h2 {
+  margin: 0;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+
+.card-title p {
+  margin: 3px 0 0;
+
+  font-size: 13px;
+
+  color: var(--text-light);
+}
+
+
+/* =========================================================
+   CREATE FORM
+   ========================================================= */
+
+.create-form {
+  display: flex;
+
+  gap: 12px;
+}
+
+
+.create-input {
+  flex: 1;
+
+  height: 54px;
+
+  padding: 0 20px;
+
+  border: 2px solid #eeeeF5;
+
+  border-radius: 15px;
+
+  outline: none;
+
+  background: #f8f8fc;
+
+  color: var(--text);
+
+  font-size: 14px;
+  transition: 0.25s;
+}
+
+
+.create-input::placeholder {
+  color: #aaaabd;
+}
+
+
+.create-input:focus {
+  border-color: var(--primary);
+
+  background: white;
+
+  box-shadow:
+    0 0 0 4px rgba(108, 99, 255, 0.10);
+}
+
+
+/* ---------- CREATE BUTTON ---------- */
+
+.create-button {
+  height: 54px;
+
+  padding: 0 22px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  background: var(--primary);
+
+  color: white;
+
+  font-weight: 700;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+
+  box-shadow:
+    0 10px 25px rgba(108, 99, 255, 0.25);
+}
+
+
+.create-button span {
+  font-size: 20px;
+
+  margin-right: 6px;
+}
+
+
+.create-button:hover {
+  background: var(--primary-dark);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 30px rgba(108, 99, 255, 0.35);
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.section-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+
+  color: white;
+}
+
+
+.section-label {
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  opacity: 0.7;
+}
+
+
+.section-heading h2 {
+  margin: 5px 0 0;
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  letter-spacing: -1px;
+}
+
+
+.plan-count {
+  padding: 7px 13px;
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(10px);
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   PLANS LIST
+   ========================================================= */
+
+.plans-list {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   PLAN ITEM
+   ========================================================= */
+
+.plan-item {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 17px 20px;
+
+  margin-bottom: 10px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 8px 30px rgba(20, 20, 50, 0.10);
+
+  transition: 0.25s;
+}
+
+
+.plan-item:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 35px rgba(20, 20, 50, 0.15);
+}
+
+
+.plan-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  min-width: 0;
+}
+
+
+.plan-number {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #f0efff;
+
+  color: var(--primary);
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+
+.item-text {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.plan-actions {
+  display: flex;
+
+  gap: 7px;
+
+  flex-shrink: 0;
+}
+
+
+.edit-button,
+.delete-button {
+  border: none;
+
+  padding: 9px 13px;
+
+  border-radius: 10px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.edit-button {
+  background: #f0efff;
+
+  color: var(--primary);
+}
+
+
+.edit-button:hover {
+  background: var(--primary);
+
+  color: white;
+}
+
+
+.delete-button {
+  background: #fff0f0;
+
+  color: #e5484d;
+}
+
+
+.delete-button:hover {
+  background: #e5484d;
+
+  color: white;
+}
+
+
+/* =========================================================
+   DELETE ALL
+   ========================================================= */
+
+.delete-all-button {
+  display: block;
+
+  margin: 25px auto 0;
+
+  padding: 12px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.10);
+
+  color: white;
+
+  backdrop-filter: blur(10px);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+
+.delete-all-button span {
+  font-size: 18px;
+
+  vertical-align: -1px;
+
+  margin-right: 5px;
+}
+
+
+.delete-all-button:hover {
+  background: #e5484d;
+
+  border-color: #e5484d;
+
+  transform: translateY(-2px);
+}
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.reja-footer {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 55px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.footer-dot {
+  opacity: 0.5;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .reja-container {
+    padding: 40px 15px;
+  }
+
+
+  .reja-header {
+    margin-bottom: 30px;
+  }
+
+
+  .reja-header h1 {
+    font-size: 42px;
+
+    letter-spacing: -2px;
+  }
+
+
+  .create-card {
+    padding: 20px;
+
+    border-radius: 20px;
+  }
+
+
+  .create-form {
+    flex-direction: column;
+  }
+
+
+  .create-button {
+    width: 100%;
+  }
+
+
+  .plan-item {
+    align-items: flex-start;
+
+    padding: 14px;
+  }
+
+
+  .plan-actions {
+    flex-direction: column;
+  }
+
+
+  .edit-button,
+  .delete-button {
+    padding: 7px 10px;
+  }
+
+
+  .section-heading h2 {
+    font-size: 23px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .reja-header h1 {
+    font-size: 36px;
+  }
+
+
+  .item-text {
+    font-size: 13px;
+  }
+
+
+  .plan-number {
+    width: 32px;
+    height: 32px;
+  }
+
+}

@@ -3,79 +3,146 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>REJA</title>
+
+    <link rel="stylesheet" href="/author/main.css" />
 
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-      integrity="sha384-GJzZqFGw1QTTN6wy59ffF1BuGJpLSa9DkKmp0Dg1Md4i1Yj70gZtWKyIbT706tWS"
-      crossorigin="anonymous"
     />
   </head>
 
-  <body style="background-color: #b8bbd1">
-    <div
-      class="container"
-      style="
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      "
-    >
-      <h1 class="display-4 py-1" style="text-align: center">
-        REJA VA MAQSADLAR
-      </h1>
+  <body class="reja-page">
+    <div class="reja-overlay"></div>
 
-      <div class="jumbotron p-3 shadow-sm">
+    <main class="reja-container">
+
+      <!-- Header -->
+      <header class="reja-header">
+        <div class="header-badge">PERSONAL PLANNER</div>
+
+        <h1>REJA <span>VA MAQSADLAR</span></h1>
+
+        <p>
+          Bugungi rejalaringizni yozing, maqsadlaringiz sari harakat qiling.
+        </p>
+      </header>
+
+
+      <!-- Create Plan -->
+      <section class="create-card">
+
+        <div class="card-title">
+          <span class="title-icon">✦</span>
+          <div>
+            <h2>Yangi reja</h2>
+            <p>Bugun nima qilishni rejalashtiryapsiz?</p>
+          </div>
+        </div>
+
         <form id="create-form" action="/create-item" method="POST">
-          <div
-            class="d-flex align-items-center"
-            style="justify-content: center"
-          >
+          <div class="create-form">
+
             <input
               id="create-field"
               name="reja"
               autofocus
               autocomplete="off"
-              class="form-control mr-3"
+              class="create-input"
               type="text"
-              style="flex: 1"
+              placeholder="Masalan: Ingliz tilini 1 soat o'rganish..."
             />
 
-            <button class="btn btn-primary" style="border-radius: 20px">
-              Yangi Reja Qoshish
-              </button>
+            <button class="create-button">
+              <span>+</span>
+              Yangi reja
+            </button>
+
           </div>
         </form>
-      </div>
-      
-      <ul id="item-list" class="list-group pb-5">
-         <% items.map (function(item) { %>
 
-         <li
-        class="list-group-item list-group-item-info d-flex align-items-center justify-content-between"
-        >
-        <span class="item-text"><%=item.reja%></span>
-        <div>
-      
-            <button data-id="<%=item._id%>"
-               class="edit-me btn btn-secondary btn-sm mr-1">
-            Ozgartirish
-            </button>
-            <button data-id="<%=item._id%>" class="delete-me btn btn-danger btn-sm">Ochirish</button>
+      </section>
+
+
+      <!-- Plans -->
+      <section class="plans-section">
+
+        <div class="section-heading">
+          <div>
+            <span class="section-label">MY PLANS</span>
+            <h2>Bugungi rejalar</h2>
           </div>
-        </li>
-        <% }) %> 
-        
-      </ul>  
 
-      <button id="clean-all" class="btn btn-danger" style="border-radius: 20px">
-        Hamma Rejalarni Ochirish
+          <span class="plan-count">
+            <%= items.length %> ta
+          </span>
+        </div>
+
+
+        <ul id="item-list" class="plans-list">
+
+          <% items.map(function(item) { %>
+
+            <li class="plan-item">
+
+              <div class="plan-left">
+
+                <div class="plan-number">
+                  <%= items.indexOf(item) + 1 %>
+                </div>
+
+                <span class="item-text">
+                  <%= item.reja %>
+                </span>
+
+              </div>
+
+
+              <div class="plan-actions">
+
+                <button
+                  data-id="<%= item._id %>"
+                  class="edit-me edit-button"
+                >
+                  O'zgartirish
+                </button>
+
+                <button
+                  data-id="<%= item._id %>"
+                  class="delete-me delete-button"
+                >
+                  O'chirish
+                </button>
+
+              </div>
+
+            </li>
+
+          <% }) %>
+
+        </ul>
+
+      </section>
+
+
+      <!-- Delete All -->
+      <button id="clean-all" class="delete-all-button">
+        <span>×</span>
+        Hamma rejalarni o'chirish
       </button>
-    </div>
+
+
+      <!-- Footer -->
+      <footer class="reja-footer">
+        <span>FOCUS</span>
+        <span class="footer-dot">•</span>
+        <span>DISCIPLINE</span>
+        <span class="footer-dot">•</span>
+        <span>PROGRESS</span>
+      </footer>
+
+    </main>
   </body>
 </html>
-      
-          
-        
