@@ -21,11 +21,11 @@ module.exports = function (db) {
   app.use(express.urlencoded({ extended: true }));
 
   // 2: Views
-
+  // 3: Routes
   app.set("views", "views");
   app.set("view engine", "ejs");
 
-  // 3: Routes
+  // 4: Routing code
 
   app.post("/create-item", (req, res) => {
     console.log("user entered /create-item");
@@ -35,12 +35,8 @@ module.exports = function (db) {
     db.collection("plans").insertOne(
       { reja: new_reja },
       (err, data) => {
-        if (err) {
-          console.log(err);
-          res.end("something went wrong");
-        } else {
-          res.end("successfully added");
-        }
+        console.log(data.ops);
+        res.json(data.ops[0]);
       }
     );
   });
