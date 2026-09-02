@@ -1,9 +1,18 @@
+
+const console = require("console");
 const express = require("express");
 const fs = require("fs");
-
 const app = express();
 
+
 let user;
+
+//MongoDB choqirish
+const mongodb = require("mongodb");
+
+
+
+
 
 fs.readFile("database/user.json", "utf8", (err, data) => {
   if (err) {
@@ -14,14 +23,14 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
 });
 
 module.exports = function (db) {
-  // 1: Middleware
+  // 1: Kirish code
 
   app.use(express.static("public"));
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
-  // 2: Views
-  // 3: Routes
+  // 2: Seccion code
+  // 3: Views code
   app.set("views", "views");
   app.set("view engine", "ejs");
 
@@ -39,6 +48,16 @@ module.exports = function (db) {
         res.json(data.ops[0]);
       }
     );
+  });
+
+  app.post("/delete-item", (req, res) => {
+    const id = req.body.id;
+    db.collection("plans").deleteOne(
+      {_id: new mongodb.ObjectId(id)}, 
+    function(err, data) {
+      res.json({ state: "success"});
+    }) 
+
   });
 
   app.get("/author", (req, res) => {
