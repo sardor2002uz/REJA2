@@ -103,17 +103,28 @@
 
 
 
-function countDigits(str) {
-    let count = 0;
+// function countDigits(str) {
+//     let count = 0;
 
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] >= "0" && str[i] <= "9") {
-            count++;
-        }
+//     for (let i = 0; i < str.length; i++) {
+//         if (str[i] >= "0" && str[i] <= "9") {
+//             count++;
+//         }
+//     }
+
+//     return count;
+// }
+
+// console.log(countDigits("ad2a54y79wet0sfgb9"));
+
+
+function checkContent(str1, str2) {
+    if (str1.length !== str2.length) {
+        return false;
     }
 
-    return count;
+    return str1.split("").sort().join("") === str2.split("").sort().join("");
 }
 
-console.log(countDigits("ad2a54y79wet0sfgb9"));
-
+console.log(checkContent("mitgroup", "gmtiprou")); // true
+console.log(checkContent("hello", "world")); // false
