@@ -131,42 +131,51 @@
 
 
 
-class Shop {
-  constructor(non, lagmon, cola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.cola = cola;
-  }
+// class Shop {
+//   constructor(non, lagmon, cola) {
+//     this.non = non;
+//     this.lagmon = lagmon;
+//     this.cola = cola;
+//   }
 
-  qoldiq() {
-    console.log(
-      `Hozir ${new Date().toLocaleTimeString()}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`
-    );
-  }
+//   qoldiq() {
+//     console.log(
+//       `Hozir ${new Date().toLocaleTimeString()}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`
+//     );
+//   }
 
-  sotish(mahsulot, soni) {
-    this[mahsulot] = this[mahsulot] - soni;
+//   sotish(mahsulot, soni) {
+//     this[mahsulot] = this[mahsulot] - soni;
 
-    console.log(
-      `${new Date().toLocaleTimeString()}da ${soni}ta ${mahsulot} sotildi`
-    );
-  }
+//     console.log(
+//       `${new Date().toLocaleTimeString()}da ${soni}ta ${mahsulot} sotildi`
+//     );
+//   }
 
-  qabul(mahsulot, soni) {
-    this[mahsulot] = this[mahsulot] + soni;
+//   qabul(mahsulot, soni) {
+//     this[mahsulot] = this[mahsulot] + soni;
 
-    console.log(
-      `${new Date().toLocaleTimeString()}da ${soni}ta ${mahsulot} qabul qilindi`
-    );
-  }
+//     console.log(
+//       `${new Date().toLocaleTimeString()}da ${soni}ta ${mahsulot} qabul qilindi`
+//     );
+//   }
+// }
+
+// const shop = new Shop(4, 5, 2);
+
+// shop.qoldiq();
+
+// shop.sotish("non", 3);
+
+// shop.qabul("cola", 4);
+
+// shop.qoldiq();
+
+
+
+function getReverse(str) {
+return str.split("").reverse().join("");
+
 }
 
-const shop = new Shop(4, 5, 2);
-
-shop.qoldiq();
-
-shop.sotish("non", 3);
-
-shop.qabul("cola", 4);
-
-shop.qoldiq();
+console.log(getReverse("hello"));
